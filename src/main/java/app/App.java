@@ -1,7 +1,6 @@
 package app;
 
-import app.domain.Person;
-import app.domain.Tenant;
+import app.userinterface.UserInterface;
 
 public class App {
 
@@ -9,11 +8,8 @@ public class App {
     public static void main(String[] args){
 
 
-        Person person = new Person("Ber", "bamiraga@cesde.net");
-
-
-        System.out.println("Name: " + person.getName());
-
+        UserInterface userInterface = new UserInterface();
+        userInterface.menuApp();
 
 
     }

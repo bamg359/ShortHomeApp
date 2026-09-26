@@ -59,14 +59,12 @@ public class FormTypeValidator {
 
     public static String stringValidator(String prompt){
 
-
             while( true){
             System.out.println(prompt);
 
-
             String value = sc.nextLine().trim();
 
-            if (value.isEmpty()) {
+            if (!value.isEmpty()) {
                 return value;
             }
                 System.out.println( "El valor no puede estar vacio ");

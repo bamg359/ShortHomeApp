@@ -14,7 +14,7 @@ public class PropertyOwnerView{
     private final PropertyOwnerService propertyOwnerService;
 
 
-    PropertyOwnerView(PropertyOwnerService propertyOwnerService){
+    public PropertyOwnerView(PropertyOwnerService propertyOwnerService){
         this.propertyOwnerService = propertyOwnerService;
     }
 
@@ -41,6 +41,12 @@ public class PropertyOwnerView{
         propertyOwnerService.createPropertyOwner(id, docType, name, lastName, phone, email, address, password, birthDate, ownerType);
 
     }
+
+
+    public void showAllPropertiesOwners(){
+         propertyOwnerService.selectAllOwners();
+    }
+
 
     // Metodos Helper , luego se convertiran en metodos de la clase service para que sean llamados desde el controller
 

@@ -1,8 +1,9 @@
 package app.service;
 
 import app.domain.PropertyOwner;
-import app.repository.PropertyOwnerRepository;
+import app.repository.PropertyOwnerRepositoryImpl;
 import app.service.inputport.PropertyOwnerService;
+import app.service.outputport.PropertyOwnerRepository;
 
 import java.util.Date;
 import java.util.List;
@@ -12,7 +13,7 @@ public class PropertyOwnerServiceImpl implements PropertyOwnerService {
 
     private final PropertyOwnerRepository propertyOwnerRepository;
 
-    PropertyOwnerServiceImpl(PropertyOwnerRepository propertyOwnerRepository){
+    public PropertyOwnerServiceImpl(PropertyOwnerRepository propertyOwnerRepository){
         this.propertyOwnerRepository = propertyOwnerRepository;
     }
 
@@ -29,7 +30,8 @@ public class PropertyOwnerServiceImpl implements PropertyOwnerService {
 
     @Override
     public List<PropertyOwner> selectAllOwners() {
-        return List.of();
+        return propertyOwnerRepository.selectAllPropertyOwners();
+
     }
 
     @Override
