@@ -1,12 +1,15 @@
 package app.service.helpers;
 
 import app.domain.enums.OwnerTypeEnum;
+import app.service.validations.FormTypeValidator;
 
 public class SetOwnerType {
 
     public static String getOwnerType(){
 
-        int option = 0;
+        int option = FormTypeValidator.intValidator("1.Propietario directo" +
+                "Administrador" +
+                "Agencia de Arrendamiento");
         String value = "";
         switch (option){
             case 1:

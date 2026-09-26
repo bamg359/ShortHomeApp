@@ -3,13 +3,13 @@ package app.view;
 import app.service.helpers.SetOwnerDocType;
 import app.service.helpers.SetOwnerType;
 import app.service.inputport.PropertyOwnerService;
+import app.service.validations.FormTypeValidator;
 
 import java.util.Date;
-import java.util.Scanner;
 
 public class PropertyOwnerView{
 
-    Scanner sc = new Scanner(System.in);
+
 
     private final PropertyOwnerService propertyOwnerService;
 
@@ -19,28 +19,20 @@ public class PropertyOwnerView{
     }
 
 
-
-
-
-
     public void createPropertyOwner(){
 
-        System.out.println("Ingrese el id del propietario");
-        int id = sc.nextInt();
+
+        int id = FormTypeValidator.intValidator("Ingrese el id del propietario");
         System.out.println("Ingrese el tipo de documento del propietario");
         String docType = SetOwnerDocType.getDocType();
-        System.out.println("Ingrese el nombre del propietario");
-        String name = sc.next();
+        String name = FormTypeValidator.stringValidator("Ingrese el nombre del propietario");
         System.out.println("Ingrese el apellido del propietario");
-        String lastName = sc.next();
-        System.out.println("Ingrese el telefono del propietario");
-        String phone = sc.next();
-        System.out.println("Ingrese el email del propietario");
-        String email = sc.next();
-        System.out.println("Ingrese la direccion del propietario");
-        String address = sc.next();
-        System.out.println("Ingrese la contraseña del propietario");
-        String password = sc.next();
+        String lastName = FormTypeValidator.stringValidator("Ingrese el apellido del propietario");
+        String phone = FormTypeValidator.stringValidator("Ingrese el telefono del propietario");
+        String email = FormTypeValidator.stringValidator("Ingrese el email del propietario");
+        String address = FormTypeValidator.stringValidator("Ingrese la direccion del propietario");
+        String password = FormTypeValidator.stringValidator("Ingrese la contraseña del propietario");
+
         System.out.println("Ingrese la fecha de nacimiento del propietario (formato: yyyy-MM-dd)");
         Date birthDate = getBirthDateFromInput();
         System.out.println("Ingrese el tipo de propietario: 1. Direct Owner, 2. Property Manager, 3. Real Estate Agency");
@@ -53,8 +45,8 @@ public class PropertyOwnerView{
     // Metodos Helper , luego se convertiran en metodos de la clase service para que sean llamados desde el controller
 
     public Date getBirthDateFromInput() {
-        System.out.println("Ingrese la fecha de nacimiento del propietario (formato: yyyy-MM-dd): ");
-        String birthDateString = sc.next();
+
+        String birthDateString = FormTypeValidator.stringValidator("Ingrese la fecha de nacimiento del propietario (formato: yyyy-MM-dd): ");
         Date birthDate = null;
         try {
             birthDate = new java.text.SimpleDateFormat("yyyy-MM-dd").parse(birthDateString);

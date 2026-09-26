@@ -1,11 +1,17 @@
 package app.service.helpers;
 
 import app.domain.enums.DocumentTypeEnum;
+import app.service.validations.FormTypeValidator;
 
 public class SetOwnerDocType {
 
     public static String getDocType(){
-        int option = 0;
+        int option = FormTypeValidator.intValidator("Seleccione:" +
+                "1. Cedula" +
+                "2.Tarjeta de Identidad" +
+                "3.Cedula Extranjeria" +
+                "4.Pasaporte");
+
         String value = "";
         switch (option){
             case 1:
