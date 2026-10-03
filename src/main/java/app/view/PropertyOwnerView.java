@@ -1,11 +1,13 @@
 package app.view;
 
+import app.domain.PropertyOwner;
 import app.service.helpers.SetOwnerDocType;
 import app.service.helpers.SetOwnerType;
 import app.service.inputport.PropertyOwnerService;
 import app.service.validations.FormTypeValidator;
 
 import java.util.Date;
+import java.util.List;
 
 public class PropertyOwnerView{
 
@@ -44,7 +46,15 @@ public class PropertyOwnerView{
 
 
     public void showAllPropertiesOwners(){
-         propertyOwnerService.selectAllOwners();
+
+
+
+        List<PropertyOwner> owners = propertyOwnerService.selectAllOwners();
+
+        for(PropertyOwner owner: owners){
+            System.out.println(owner.getId() + "" + owner.getName() + "");
+        }
+
     }
 
 

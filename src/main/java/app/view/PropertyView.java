@@ -19,9 +19,6 @@ public class PropertyView {
 
         System.out.println("Ingrese el id de la propiedad: ");
 
-
-
-
     }
 
     public void selectPropertyById(int id){

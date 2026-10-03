@@ -9,10 +9,15 @@ import app.view.PropertyOwnerView;
 
 public class UserInterface {
 
-    PropertyOwnerRepository propertyOwnerRepository = new PropertyOwnerRepositoryImpl();
-    PropertyOwnerService propertyOwnerService = new PropertyOwnerServiceImpl(propertyOwnerRepository);
-    PropertyOwnerView propertyOwnerView = new PropertyOwnerView(propertyOwnerService);
 
+
+
+    private final PropertyOwnerView propertyOwnerView;
+
+
+    public UserInterface(PropertyOwnerView propertyOwnerView) {
+        this.propertyOwnerView = propertyOwnerView;
+    }
 
     public void menuApp(){
 
@@ -39,5 +44,11 @@ public class UserInterface {
                     System.out.println("Seleccione una opcion valida");
             }
         }
+
+
+
+
+
+
     }
 }

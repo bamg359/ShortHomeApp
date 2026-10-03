@@ -22,10 +22,6 @@ public class PropertyOwnerRepositoryImpl implements PropertyOwnerRepository {
     @Override
     public List<PropertyOwner> selectAllPropertyOwners() {
 
-        for(PropertyOwner owner: owners){
-            System.out.println(owner.getId() + "" + owner.getName() + "");
-        }
-
         return owners;
     }
 
